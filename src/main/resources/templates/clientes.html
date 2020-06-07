@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confecção App - Clientes</title>
+</head>
+<body>
+
+    <div class="container my-2">
+        <h2>Clientes</h2>
+
+        <a th:href="@{/showNewClienteForm}" class="btn btn-primary btn-sm mb-3"> Novo Cliente </a>
+
+        <table border="1" class="table table-hover table-responsive-md">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Empresa</th>
+                    <th scope="col">Telefone</th>
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="cliente : ${listClientes}">
+                    <td th:text="${cliente.id}"></td>
+                    <td th:text="${cliente.nome}"></td>
+                    <td th:text="${cliente.empresa}"></td>
+                    <td th:text="${cliente.fone}"></td>
+                    <td> <a th:href="@{/showFormForUpdate/{id}(id=${cliente.id})}" class="btn btn-primary">Atualizar</a>
+                        <a th:href="@{/deleteCliente/{id}(id=${cliente.id})}" class="btn btn-danger">Remover</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>

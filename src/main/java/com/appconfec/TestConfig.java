@@ -46,8 +46,8 @@ public class TestConfig implements CommandLineRunner{
 		
 		produtoRepository.saveAll(Arrays.asList(prod1, prod2));
 		
-		Cliente c1 =  new Cliente(null, "Hellen", "Pé de porco", "(11)97747-8878");
-		Cliente c2 = new Cliente(null, "Cris", "Confecção", "(11)95541-8852)");
+		Cliente c1 =  new Cliente(null, "Hellen", "Pé de porco", "(11) 97747-8878");
+		Cliente c2 = new Cliente(null, "Cris", "Confecção", "(11 )95541-8852)");
 		
 		Pedido p1 = new Pedido(null, LocalDate.now(), 0.0, "Pijamas Coloridos", c1);
 		Pedido p2 = new Pedido(null, LocalDate.now(), 11.50, "Blusas Moletom", c2);

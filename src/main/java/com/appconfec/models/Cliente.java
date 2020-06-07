@@ -23,7 +23,7 @@ public class Cliente implements Serializable {
 	private String nome;
 	@Size(max=100)
 	private String empresa;
-	@Size(max=15)
+	@Size(max=20)
 	private String fone;
 	
 	public Cliente() {
